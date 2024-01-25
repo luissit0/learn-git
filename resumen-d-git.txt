@@ -140,4 +140,4 @@ git push luissit0 main
  tiene que poner tu usuario y tu token*/.
 
 // ahorata toca lo contrario actualisa tu repositorio git jalando desde github con
-git pull 
+git pull origin main //desde origin el por defeacto de git y en la rama main
