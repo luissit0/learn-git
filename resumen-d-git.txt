@@ -141,3 +141,6 @@ git push luissit0 main
 
 // ahorata toca lo contrario actualisa tu repositorio git jalando desde github con
 git pull origin main //desde origin el por defeacto de git y en la rama main
+git fetch /*commando usado para verifica los cambios realizados
+en el repositorio remoto sin combinar esos cambios con el 
+repositorio local*/
