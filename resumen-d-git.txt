@@ -1,0 +1,143 @@
+curso comandos de git:
+
+//para crear un repositorio git es el siguiente comandos
+git init // esto inicialisara un repositorio git en donde se encuentre actualmente
+
+//luego para crear usuario y correo asociado a ese repositorio
+git config user.name "nombre del usuario"
+//en caso que queira crear para todo lso repositorio el mismo 
+// nombre de usuario
+git config --global user.name hola
+
+// similar aplicar para el email
+git config [--global] [user.email] "con comillas pemite espacios vacios"
+
+// en el caso que queiras cambiar el nombre de tu rama princial 
+// por ejemplo de master a main
+git config --global init.defaultBranch "main"
+
+// es para ver la informacion historial y sha(secure hash algorimts)
+git log
+/*solo en mi zsh para salir del git log se tiene que apretar la letra 
+ q y no se porque esto en tu systema operativo parrot
+*/
+
+//para comensar a hace seguimiento a tus archivos etc se pone
+git add "tu archivo"
+// si estas seguro que queire agrega todos los cambios al seguimiento desde la rama de carpeta de donde estas puede poner
+git add . 
+
+//para asociar un editor como principal a git en mi terminal parrot por defaul usa nano.
+git config --global core.editor "editor --wait" //en caso de que sea para un editor no soportado default de git se pone todo el path del systema de donde esta el editor el ejecutable
+// --wait permite esperar a que terminemos de escribir primero en el editor y luego lo asocia
+
+//hacer un git commit que significa comprometerse oxea pasar lo al estado que puede comprometer al programa
+git commit -m "aqui se pone el mensaje decriptivo del cambio que se va comprometer"
+//o tambien puede hacer en un editor
+git commit
+// el git commit compromete todo lo que esta dentro del add asi que procura solo meter lo que queires cambiar de verdad en el add.
+
+//para resetear un commit es el siguiente comando que tiene los siguientes opciones o parametros
+git reset --soft HEAD~1
+// el paramentro soft significa que es un reseseto suave osea no borra el contenido cambiado solo su historial en el git log
+// y en el parmetro HEAD~1 significa que solo borra el ultimos 1 commit realisado si fuera 2 serian los ultimos 2 commit realisados.        
+
+// tambien exite la opcion hard por deduccion significaria que tambien elimina el contenido cambiado en el codigo y el head sucede igual para especificar que es lo que queire ser retrocedido en el tiempo
+git reset --hard HEAD~2 //por ejemplo
+
+/*ahora toca aprender a crear un rama en git que genera una linea 
+independiente o version paralela de la evolucion del programa*/
+git branch "nombre-de-la-nueva-rama" //por convencion se usa - como saparacion entre palabras
+//para ver en que rama estoy y que ramas hay
+git branch //la version en que estas estara de color verde
+
+// ahora toca saber como moverse de rama en rama se hace con el siguiente comando
+git checkout "la-version-de-la-rama-que-deseas-mover-te"
+
+/*luego debes de tener cuidado si queire crear otra rama se creara 
+otra rama desde la rama de donde estan y generalmente regresan a la
+ rama principal si no queiren ningun "flavor".*/
+git checkout main 
+
+//para crear una rama y de una ves ir a esa rama en el mismo tiempo que se crea agregar el paramentro opcion -b
+git checkout -b "version-python"
+
+//ahora toca saber como cambiar el nombre de una rama hay 2 forma de hacer la una es cambiar el nombre en la rama que estas a dentro
+git brach -m "version-js" // la version cambiar nombre de la rama dentro del que estas
+git branch -m "la version que quiere cambiar" "el nuevo nombre que queire cambiar" //la verion de cambiar nombre sin importar en que rama estes.
+
+/*ahora toca aprender como eliminar las ramas y la rama pricipal no se
+ puede eliminar el main en este caso que le pusiste como rama pricipal
+ del curso-d-git*/
+git branch -d version-py // -d significa delete paramentro que activa ese metodo en branch y luego se selecciona la rama que se quiere eliminar
+
+//el commando git log muestra las modificaciones commits cambiado y su ramificacion ultimo con repecto anterior
+git log 
+//para ver los de forma resumida especialemnte cuando hay mayor cantidad de cambios usar
+git log --oneline
+//con el comando
+git log -b //esto permite ver la diferencia que se ha cambiado la lineas anteriores y la de despues y presionando enter se puede ver mas habajo si lo hay
+
+// ahora toca saber como hacer para fusionar ramas
+// para fusiona dos ramas, debes de estar en la rama que recibira la fusion. es muy importante.
+git merge "texto-expandido"
+git branch -d texto-expandido //recuerda borrar la rama que se sumo al main o rama elegida a fusionar si es que es que ya no se nececita.
+/* 
+https://youtu.be/mBYSUUnMt9M?feature=shared&t=8585
+te quedaste en 2:23:05
+*/
+// hay que saber que hay posibles conflictos con el merge ahora vamos a averiguar de que se trata 
+/*
+en caso que surja un conflicto y en el edito de codigo elije 
+como se ha resolvido luego por git para terminarlos en ves de 
+aplastar el boton puedes utilisar el siguiente comando
+*/
+git merge --continue
+
+git remote //permite ver a donde se conecta?
+// si pones
+git remote -v //sale el origen de venida con fetch se queda grabada automaticamente despues de usar 
+git clone "el repositorio github" // su origen de venida
+//y push tambien que seria de salida.
+
+ felicitaciones ahora ya sabe todo los fundamente essenciales de git 
+--------------------------------------------------------------------
+//Ahora toca saber sobre git hub
+
+//agregar la url del repositorio de que se queire dirigir hay 2 formas
+git remote add luissit0 https://github.com/luissit0/bash-resume-tutorial.git
+git remote add origin https://github.com/luissit0/bash-resume-tutorial.git
+git remote -v //para ver los repositorios agregados
+luissit0	https://github.com/luissit0/bash-resume-tutorial.git (fetch)
+luissit0	https://github.com/luissit0/bash-resume-tutorial.git (push)
+origin	https://github.com/luissit0/bash-resume-tutorial.git (fetch)
+origin	https://github.com/luissit0/bash-resume-tutorial.git (push)
+
+en ves del add tambien hay opciones rename(renombrar) o rm(remover)
+
+/*antes de poder hace un push o subir al reprositorio connectar 
+ nececitas hacer un git fetch que sincronisa el ropsitorio con una
+ carpeta que se genera, el git fetch se autogenera si mas antes has
+ echo un git clone y desde esa carpeta repositorio has estado
+ trabajando pero si no debes de hacer el git fetch*/
+git fetch 
+/*una ves sincronisado debes de mover el archivo que queires 
+actualisar dentro de la carpeta creada del mismo nombre no cambiar el 
+nombre de la carpeta no sabes que puede suceder puede que no lo 
+reconosca facil*/
+/*depues de mover aplicar*/ 
+git add 
+           //y 
+git commit
+//luego
+// para connectar desde tu terminal git a github porner el siguiente commando esto sube o actualisa desde tu git al repositorio git hub
+git push origin main 
+// o 
+git push luissit0 main
+/*ademas en mi terminal dice que git a cancelado la forma de entrarpor
+ contrasenya solo se puede entrar por token y que se recomienda que se
+ cree tokens que expiren. en seetings/developer settings etc. aqui
+ tiene que poner tu usuario y tu token*/.
+
+// ahorata toca lo contrario actualisa tu repositorio git jalando desde github con
+git pull 
