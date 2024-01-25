@@ -139,10 +139,17 @@ git push luissit0 main
  cree tokens que expiren. en seetings/developer settings etc. aqui
  tiene que poner tu usuario y tu token*/.
 
-// ahorata toca lo contrario actualisa tu repositorio git jalando desde github con
+// ahora toca lo contrario actualisa tu repositorio git jalando desde github con
 git pull origin main //desde origin el por defeacto de git y en la rama main
 git fetch /*commando usado para verifica los cambios realizados
 en el repositorio remoto sin combinar esos cambios con el 
 repositorio local*/ 
 // o
 git fetch origin
+//luego al poner
+git checkout origin/main //entrara la descarga opcional donde dara escrito 2 opciones
+//si deseas descagarlos en un rama alterna o  revertir eso. 
+//luego al regresar a
+git checkout main 
+//saldra la opcion de si pones 
+git pull origin //se actualisara en el repositorio de donde estas
