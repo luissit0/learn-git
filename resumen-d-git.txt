@@ -143,4 +143,6 @@ git push luissit0 main
 git pull origin main //desde origin el por defeacto de git y en la rama main
 git fetch /*commando usado para verifica los cambios realizados
 en el repositorio remoto sin combinar esos cambios con el 
-repositorio local*/
+repositorio local*/ 
+// o
+git fetch origin
