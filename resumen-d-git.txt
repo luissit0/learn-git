@@ -190,7 +190,7 @@ git branch -a //recuerde que q es para salir del esta del output de la terminal
 //el siguiente comando:
 git push origin -d nueva-rama
 
-//ademas la ramapricipal main o master no se puede eliminar
+//ademas la rama principal main o master no se puede eliminar
 //asi es por defecto por seguridad
 
 
