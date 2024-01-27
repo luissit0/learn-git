@@ -153,3 +153,44 @@ git checkout origin/main //entrara la descarga opcional donde dara escrito 2 opc
 git checkout main 
 //saldra la opcion de si pones 
 git pull origin //se actualisara en el repositorio de donde estas
+
+// ahora para crear un git y conectarlo al github
+// del push pedira nombre del usuarion y clave del token
+echo "# javascript-pr.js" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/luissit0/javascript-pr.js.git
+git push -u origin main
+
+git remote add origin https://github.com/luissit0/javascript-pr.js.git
+git branch -M main
+git push -u origin main
+
+//despues de hace un fork en git hub opcione ver ahora toca ver
+// como funciona un pull request
+el pull request lo hace en el github
+
+//el 
+git pull origin la-rama-elegida-de-tu-github //pasa de rama a la misma rama, si es main o master con el mismo si no
+//pero en caso de que desde main haces un pull origin de otra rama en
+//github entonces no funciona se hace lo siguiente.
+git fetch origin // luego
+git checkout la-nueva-rama //aparece la nueva rama una ves que hace el git check out si no el branch no lo dectara antes
+git branch //verifica que aparece la nueva rama.
+
+//ahora toca sabe como eliminar una rama local y luego remota
+git branch -d nueva-rama
+
+// para ver las ramas locales y tambien remotas poner
+git branch -a //recuerde que q es para salir del esta del output de la terminal
+
+//ahora para eliminar lo desde la terminal de forma remota a github
+//el siguiente comando:
+git push origin -d nueva-rama
+
+//ademas la ramapricipal main o master no se puede eliminar
+//asi es por defecto por seguridad
+
+
