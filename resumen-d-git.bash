@@ -225,7 +225,7 @@ https://www.youtube.com/watch?v=HyCaL6ld8pI
 
 
 
-# "felicitaciones ahora ya sabe todo los fundamente essenciales de git" 
+# "felicitaciones ahora ya sabe todo los fundamentos practicos essenciales de git" 
 ----------------------------------------------------------------
 #Ahora toca saber sobre git hub
 
