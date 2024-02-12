@@ -211,18 +211,21 @@ git stash branch mi-starsh-1 [0~#n]
                # puede escojer por el nombre asignado o
                #crea un nombre y cojer por el # de orden de la logica del stack  
 
-               
-
-
 # ahora se complica un poco con git rebase
-https://www.youtube.com/watch?v=0chZFIZLR_0
+https://www.youtube.com/watch?v=NhLv3WHI_BI
+# git rebase coge todo la diferencial de branch y lo poner ensima de otro 
+# debes estar en la rama del que queires aplicar le ensima el reabase todo el cambio de la otra rama
+# muchas veces no se recomienda usar la rama central master o main  ponerce ensima de los brach  lo corona pero se pierde la hilacion de la historia original central raraveces solo coronar cuando realmente edeberia ser en si algo superior o algo asi.
+git rebase [la rama entera al que les va a poner ensima de donde estas]
+# video criterio general de git rebase
+https://www.youtube.com/watch?v=0chZFIZLR_0               
 
 # un buen resumen de criterio general avanzado explicado facilmente
 https://www.youtube.com/watch?v=HyCaL6ld8pI
 
 
 
- felicitaciones ahora ya sabe todo los fundamente essenciales de git 
+# "felicitaciones ahora ya sabe todo los fundamente essenciales de git" 
 ----------------------------------------------------------------
 #Ahora toca saber sobre git hub
 
@@ -279,11 +282,8 @@ git push -u origin main
 git remote add origin https:#github.com/luissit0/javascript-pr.js.git
 git branch -M main
 git push -u origin main
-
-#despues de hace un fork en git hub opcione ver ahora toca ver
-# como funciona un pull request
-el pull request lo hace en el github
-
+# despues de hace un fork en git hub opciones, ahora toca ver como funciona un pull request, 
+# El pull request lo hace en el github
 #el 
 git pull origin la-rama-elegida-de-tu-github #pasa de rama a la misma rama, si es main o master con el mismo si no
 #pero en caso de que desde main haces un pull origin de otra rama en
