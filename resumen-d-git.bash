@@ -262,6 +262,7 @@ repositorio local*/
 # o
 git fetch origin
 #luego al poner
+git switch --detach origin/master #abrira codium para ver primero lo que ha hecho sin hacer el merge primero otra opcion es la de abajo.
 git checkout origin/main #entrara la descarga opcional donde dara escrito 2 opciones
 #si deseas descagarlos en un rama alterna o  revertir eso. 
 #luego al regresar a
